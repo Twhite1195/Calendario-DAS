@@ -6,13 +6,18 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Summary description for UserServices
+/// Clase que contiene los servicios ultizados por el usuario
 /// </summary>
 public class UserServices : IUserServices
 {
     public static List<User> Users = new List<User>();
     public static int Id = 0;
-
+    /// <summary>
+    /// Metodo que recibe la informacion necesaria para crear un usuario y agregarlo a la lista de usuarios
+    /// </summary>
+    /// <param name="user"></param>
+    /// <param name="pass"></param>
+    /// <returns></returns>
     public bool CreateUser(string user, string pass)
     {
         bool crear = false;
@@ -21,6 +26,12 @@ public class UserServices : IUserServices
         crear = true;
         return crear;
     }
+    /// <summary>
+    /// Metodo que recibe el usuario y contraseña del usuario y verifica si existe en el sistema
+    /// </summary>
+    /// <param name="user"></param>
+    /// <param name="pass"></param>
+    /// <returns></returns>
     public User Login(string user, string pass)
     {
         User userAux = null;
@@ -34,6 +45,11 @@ public class UserServices : IUserServices
         }
         return userAux;
     }
+    /// <summary>
+    /// Metodo que recibe el recordatorio del usuario y lo agrega a los recordatorios del cliente
+    /// </summary>
+    /// <param name="aux"></param>
+    /// <returns></returns>
     public bool PostReminder(Reminder aux)
     {
         bool publicacion = false;
