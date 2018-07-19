@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Summary description for Reminder
+/// Clase del objeto recordatorio
 /// </summary>
 public class Reminder
 {
